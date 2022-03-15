@@ -1,8 +1,16 @@
-int score = 80;
+int score = 80; //variable initialization. We declare the variable "score" and assign it a value of 80. 
 
-String result;
+String result;  // variable declaration with no itialization. 
 
+//In the code below we will make use of the conditional statements if, 
+//if else and else to control the flow of the program. What will happen is that the 
+//variable declared above will go through the three conditions below one after another 
+//and will output a result based on the conditions set.
+//In case the variable is equal to 80, which it is, the console will output " You passed"
+//In case it is more than 80, it will output " You did great" and in any other case, it will output
+//"You did not pass. Try again!"
 if (score == 80) {
+	//Note that the == is different from =; the former checks for equality among the values, the latter is used for value assignment. 
 	result = "You passed!";
 } else if (score > 80) {
 	result = "You did great!";
@@ -10,4 +18,4 @@ if (score == 80) {
 	result = "You did not pass. Try again!";
 }
 
-System.out.println(result);
+System.out.println(result); //The result that will be output is "You passed" since the  variable score has a value of 80. 
