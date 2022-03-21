@@ -1,8 +1,11 @@
-public static void main(String[] args) {
-	String[] foodTypes = getFoodTypes();
-	String myType = foodTypes[2];
+ public static void main(String[] args) {
+	String[] foodTypes = getFoodTypes(); // calling the getFoodTypes function and save the result inside the foodtypes variable.  
+	String myType = foodTypes[2]; // saving the result of my food type inside the variable myType. In this case myType is 
+									//is "dinner" as it is the element of the foodtypes array that is at index 2.   
 
-	String[] foodsOfMyType = getFoodsByType(myType);
+	String[] foodsOfMyType = getFoodsByType(myType); //calling the getFoodByType function and save the result inside foodsOfMyType variable. 
+
+//In the line below, we use a control flow mechanism: the for loop through the different food types. 
 	
 	for (String food : foodsOfMyType) {
 		System.out.println(food);
@@ -10,13 +13,15 @@ public static void main(String[] args) {
 }
 
 public static String[] getFoodTypes() {
-	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};
-	return foodTypes;
+	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"}; //Array displayed the different options of food. 
+	return foodTypes; //Return statement that would return one or multiple options from the above array. 
 }
 
 public static String[] getFoodsByType(String type) {
-	String[] foods = new String[3];
+	String[] foods = new String[3]; //array that will display three different options of food within each food type. 
 
+//The switch statement below will check for the type of food selected by the customer and return the three options within this type of food. 
+//For example, if the customer selects "breakfast", it will reurn "pancakes, cereal and omelette" as the different options under breakfast. 
 	switch(type) {
 	case "breakfast":
 		foods[0] = "pancakes";

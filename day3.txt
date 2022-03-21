@@ -1,14 +1,15 @@
-public class Food {
-	public String name;
-	public String type;
+public class Food { //class creation
+	public String name; //variable declaration
+	public String type; //variable declaration 
 
-	public Food(String name, String type) {
-		this.name = name;
-		this.type = type;
+	public Food(String name, String type) { //no args constructor creation
+		this.name = name; //constructor variable
+		this.type = type; //contructor variable
 	}
 
-	public void cook() {
-		if (!name.contains("cooked")) {
+	public void cook() { //method creation
+		if (!name.contains("cooked")) { conditional statement that checked if the name does not contain the word cook and in such case
+								it will return the line below. 
 			name = "cooked " + name;
 		}
 	}
@@ -16,9 +17,9 @@ public class Food {
 
 public class Main {
 	public static void main(String[] args) {
-		Food myFood = new Food("potato", "vegetable");
-		myFood.cook();
+		Food myFood = new Food("potato", "vegetable"); //instantiating an object
+		myFood.cook(); //calling the method
 
-		System.out.println(myFood.name);
+		System.out.println(myFood.name); //output the name of the food as set in the constructor.The name of the food is potato. myFood.type would return vegetable 
 	}
 }
