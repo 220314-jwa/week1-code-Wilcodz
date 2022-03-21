@@ -1,12 +1,15 @@
 public class Main {
 	public static void main(String[] args) {
-		Javalin app = Javalin.create();
 
-		app.start();
+		Javalin app = Javalin.create(); //to get the Javalin object, we call a static method 
+	                                     //from the Javalin class that return the object.
 
-		app.get("foods", ctx -> {
-			Food myFood = new Food("carrots", "vegetable");
-			ctx.result("You got: " + myFood.name);
+		app.start(); //This line is used to start the server. 
+
+//the line below is the http request. 
+		app.get("foods", ctx -> { 
+			Food myFood = new Food("carrots", "vegetable"); // Food object that will be part of the http response. 
+			ctx.result("You got: " + myFood.name); //this is what will be displayed on the browser. 
 		});
 	}
 }

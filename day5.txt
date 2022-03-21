@@ -1,10 +1,10 @@
-<html>
-	<head>
-		<title>Daily Code Review</title>
+<html> // the root element of the html document.
+	<head> // the tag that includes all the meta data of the document. 
+		<title>Daily Code Review</title> //Title of the document. Title is not displayed in the browser. 
 	</head>
 	<body>
-		<h1>Cook your food!</h1>
-		<form action="http://localhost:8080/cook">
+		<h1>Cook your food!</h1> //the heading of the page.  
+		<form action="http://localhost:8080/cook">  // the form tag for grouping together input elements with a submit button. 
 			<label for="foodName">Food Name:</label>
 			<input id="foodName" name="foodName" type="text">
 			<br>
@@ -14,12 +14,13 @@
 </html>
 
 public static void main(String[] args) {
-	Javalin app = Javalin.create();
-	app.start();
-
+	Javalin app = Javalin.create(); 
+	app.start(); //Starting the server 
+ //The code below will tell the browser how to respond to a get request from an URI that ends with "cook" 
 	app.get("cook", ctx -> {
-		String foodSent = ctx.formParam("foodName");
+		String foodSent = ctx.formParam("foodName"); // Because the request was sent using a form, therefore each piece is a form , henvce
+                                                         //the .formParam method. We need to get the info using that method. 
 		String cookedFood = "cooked " + foodSent;
-		ctx.result("Here's your food! <br>" + cookedFood);
+		ctx.result("Here's your food! <br>" + cookedFood); //this line displays the result in the browser. 
 	});
 }
